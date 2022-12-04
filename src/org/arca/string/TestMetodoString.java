@@ -9,10 +9,9 @@ public class TestMetodoString {
 	public static void main(String[] args) {
 		var str1 = " ";
 		var str2 = "";
-		var str3 = "Tem\nConteudo\nAvançado";
-		System.out.println(str3);
+		var str3 = " Tem Conteudo Avançado - ";
+		System.out.println(str3.repeat(3));
 		
-		System.out.println(str3.lines().collect(Collectors.toList()));
 		
 		
 	}
