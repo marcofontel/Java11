@@ -1,19 +1,31 @@
 package org.arca.string;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class TesteWrite {
 	
 	
 	public static void main(String[] args) {
 		String file = "exemplo.txt";
-		String texto = "Gostaria de informar que estamos ligados a toda força de trabalho produtiva";
-		try (BufferedWriter buff = new BufferedWriter(new FileWriter(file))){
-			buff.write(texto);
+		String texto = "Gostaria de informar que estão ligados a toda força de trabalho produtiva";
+		String s;
+		try{
+			Files.writeString(new File(file).toPath(), texto, StandardCharsets.UTF_8);
+			BufferedReader r = new BufferedReader(new FileReader(file));
+			System.out.println(r.lines().collect(Collectors.toList()));
+	
+			
+			r.reset();
 		} catch (IOException e) {
-			System.out.println(e);
-					}
+			
+		}
+		
 	}
 }
