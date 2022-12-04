@@ -19,13 +19,13 @@ public class TesteWrite {
 		try{
 			Files.writeString(new File(file).toPath(), texto, StandardCharsets.UTF_8);
 			BufferedReader r = new BufferedReader(new FileReader(file));
-			System.out.println(r.lines().collect(Collectors.toList()));
-	
-			
-			r.reset();
+			String conteudo = Files.readString(new File(file).toPath()); 
+			System.out.println(conteudo);
 		} catch (IOException e) {
 			
 		}
+		
+		
 		
 	}
 }
