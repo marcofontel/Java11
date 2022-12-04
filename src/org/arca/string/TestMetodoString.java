@@ -1,7 +1,6 @@
 package org.arca.string;
 
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
+import java.util.function.Function;
 
 public class TestMetodoString {
 
@@ -12,7 +11,7 @@ public class TestMetodoString {
 		var str3 = " Tem Conteudo Avançado - ";
 		System.out.println(str3.repeat(3));
 		
-		
-		
+		Function<String, String> concatena = (var s) -> s + ". ";
+		System.out.println(concatena.apply("testando o teste"));
 	}
 }
